@@ -1,5 +1,7 @@
 import { ArrowLeftOutlined, ArrowRightOutlined } from "@material-ui/icons"
+import { useState } from "react";
 import styled from "styled-components"
+import { sliderItems } from "../data";
 
 const Container = styled.div`
    width: 100%;
@@ -26,11 +28,14 @@ const Arrow = styled.div`
     margin: auto;
     cursor: pointer;
     opacity: 0.5;
+    z-index: 2;
 `;
 
 const Wrapper = styled.div`
    height: 100%;
    display: flex;
+   transition: all 1.5s ease;
+   transform: translateX(${props => props.slideIndex * -100}vw);
 `;
 
 const Slide = styled.div`
@@ -72,24 +77,35 @@ cursor: pointer;
 `
 
 function Slider() {
+    const [slideIndex, setSlideIndex] = useState(0);
+    const handleClcik = (direction) => {
+        if (direction === "left") {
+            setSlideIndex(slideIndex > 0 ? slideIndex - 1 : 2);
+        } else {
+            setSlideIndex(slideIndex < 2 ? slideIndex + 1 : 0);
+        }
+    };
     return (
         <Container>
             <Arrow direction="left" onClick={() => handleClcik("left")}>
                 <ArrowLeftOutlined />
             </Arrow>
-            <Wrapper>
+            <Wrapper slideIndex={slideIndex}>
+                {sliderItems.map((item) => (
 
-                <Slide bg="f5fafd">
-                    <ImgContainer>
-                        <Image src="https://www.pngplay.com/wp-content/uploads/6/Dress-Clothes-Transparent-Background.png" />
-                    </ImgContainer>
-                    <InfoContainer>
-                        <Title>SUMMER SALE</Title>
-                        <Desc>DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.</Desc>
-                        <Button>BUY NOW</Button>
-                    </InfoContainer>
-                </Slide>
-                <Slide bg="fcfled">
+
+                    <Slide bg={item.bg}>
+                        <ImgContainer>
+                            <Image src={item.img} />
+                        </ImgContainer>
+                        <InfoContainer>
+                            <Title>{item.title}</Title>
+                            <Desc>{item.desc}</Desc>
+                            <Button>BUY NOW</Button>
+                        </InfoContainer>
+                    </Slide>
+                ))}
+                {/* <Slide bg="fcfled">
                     <ImgContainer>
                         <Image src="https://www.pngplay.com/wp-content/uploads/6/Dress-Clothes-Transparent-Background.png" />
                     </ImgContainer>
@@ -108,7 +124,7 @@ function Slider() {
                         <Desc>DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.</Desc>
                         <Button>BUY NOW</Button>
                     </InfoContainer>
-                </Slide>
+                </Slide> */}
 
             </Wrapper>
             <Arrow direction="right" onClick={() => handleClcik("right")}>
