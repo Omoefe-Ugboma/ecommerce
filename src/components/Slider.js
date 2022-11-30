@@ -5,8 +5,9 @@ const Container = styled.div`
    width: 100%;
    height: 100vh;
    display: flex;
-   background-color: coral;
+   /* background-color: coral; */
    position: relative;
+   overflow: hidden;
 `;
 
 const Arrow = styled.div`
@@ -29,6 +30,7 @@ const Arrow = styled.div`
 
 const Wrapper = styled.div`
    height: 100%;
+   display: flex;
 `;
 
 const Slide = styled.div`
@@ -52,9 +54,21 @@ flex: 1;
 padding: 50px;
 `;
 
-const Title = styled.h1``
-const Desc = styled.p``
-const Button = styled.button``
+const Title = styled.h1`
+font-size: 70px;
+`
+const Desc = styled.p`
+margin: 50px 0px;
+font-size: 20px;
+font-weight: 500;
+letter-spacing: 3px;
+`
+const Button = styled.button`
+padding: 10px;
+font-size: 20px;
+background-color: transparent;
+cursor: pointer;
+`
 
 function Slider() {
     return (
@@ -63,16 +77,38 @@ function Slider() {
                 <ArrowLeftOutlined />
             </Arrow>
             <Wrapper>
-                <Slide>
+
+                <Slide bg="f5fafd">
                     <ImgContainer>
-                        <Image src="https://play-lh.googleusercontent.com/xpx5LFTz1DYMFze9HZNl9lahGtT2jhNqT6SLiWxMN-XKfWlTFiH3Vfq_dBntv1M9L9c" />
+                        <Image src="https://www.pngplay.com/wp-content/uploads/6/Dress-Clothes-Transparent-Background.png" />
                     </ImgContainer>
                     <InfoContainer>
                         <Title>SUMMER SALE</Title>
                         <Desc>DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.</Desc>
-                        <Button></Button>
+                        <Button>BUY NOW</Button>
                     </InfoContainer>
                 </Slide>
+                <Slide bg="fcfled">
+                    <ImgContainer>
+                        <Image src="https://www.pngplay.com/wp-content/uploads/6/Dress-Clothes-Transparent-Background.png" />
+                    </ImgContainer>
+                    <InfoContainer>
+                        <Title>WINTER SALE</Title>
+                        <Desc>DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.</Desc>
+                        <Button>BUY NOW</Button>
+                    </InfoContainer>
+                </Slide>
+                <Slide bg="fbf0f4">
+                    <ImgContainer>
+                        <Image src="https://www.pngplay.com/wp-content/uploads/6/Dress-Clothes-Transparent-Background.png" />
+                    </ImgContainer>
+                    <InfoContainer>
+                        <Title>POPULAR SALE</Title>
+                        <Desc>DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.</Desc>
+                        <Button>BUY NOW</Button>
+                    </InfoContainer>
+                </Slide>
+
             </Wrapper>
             <Arrow direction="right">
                 <ArrowRightOutlined />
