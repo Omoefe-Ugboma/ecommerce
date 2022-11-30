@@ -38,6 +38,7 @@ width: 100vw;
 height: 100vh;
 display: flex;
 align-items: center;
+background-color: #${props => props.bg};
 `;
 
 const ImgContainer = styled.div`
@@ -73,7 +74,7 @@ cursor: pointer;
 function Slider() {
     return (
         <Container>
-            <Arrow direction="left">
+            <Arrow direction="left" onClick={() => handleClcik("left")}>
                 <ArrowLeftOutlined />
             </Arrow>
             <Wrapper>
@@ -110,7 +111,7 @@ function Slider() {
                 </Slide>
 
             </Wrapper>
-            <Arrow direction="right">
+            <Arrow direction="right" onClick={() => handleClcik("right")}>
                 <ArrowRightOutlined />
             </Arrow>
         </Container>
