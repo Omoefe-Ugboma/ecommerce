@@ -34,6 +34,9 @@ padding-left: 20px;
 `
 const Button = styled.button`
 flex: 1;
+border: none;
+background-color: teal;
+color: white;
 `
 
 const Newsletter = () => {
