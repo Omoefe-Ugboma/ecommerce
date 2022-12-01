@@ -57,9 +57,9 @@ display: flex;
 align-items: center;
 `;
 
-const Payment = styled.div`
-
-`
+const Payment = styled.img`
+width: 50%;
+`;
 
 const Footer = () => {
     return (
@@ -101,13 +101,13 @@ const Footer = () => {
             <Right>
                 <Title>Contact</Title>
                 <ContactItem>
-                    <Room /> 454 Dixs Path, South Tobmix 434
+                    <Room style={{ marginRight: "10px" }} /> 454 Dixs Path, South Tobmix 434
                 </ContactItem>
                 <ContactItem>
-                    <Phone /> +2349023454332
+                    <Phone style={{ marginRight: "10px" }} /> +2349023454332
                 </ContactItem>
                 <ContactItem>
-                    <MailOutline /> contact@fashion.com
+                    <MailOutline style={{ marginRight: "10px" }} /> contact@fashion.com
                 </ContactItem>
                 <Payment src="https://i.ibb.co/Qfvn4z6/payment.png" />
             </Right>
