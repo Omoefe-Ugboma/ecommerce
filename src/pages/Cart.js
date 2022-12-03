@@ -1,3 +1,4 @@
+import { Add, Remove } from "@material-ui/icons"
 import styled from "styled-components"
 import Navbar from '../components/Navbar';
 import Announcement from '../components/Announcement';
@@ -59,15 +60,67 @@ justify-content: space-around;
 `
 const ProductName = styled.span``
 const ProductId = styled.span``
-const ProductColor = styled.div``
+const ProductColor = styled.div`
+width: 20px;
+height: 20px;
+border-radius: 50%;
+background-color: ${(props) => props.color};
+`
 const ProductSize = styled.span``
 const PriceDetail = styled.div`
 flex: 1;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
 `
 
+const ProductAmountContainer = styled.div`
+display: flex;
+align-items: center;
+margin-bottom: 20px;
+`
+const ProductAmount = styled.div`
+font-size: 24px;
+margin: 5px;
+`
+const ProductPrice = styled.div`
+font-size: 30px;
+font-weight: 200;
+`
+
+const Hr = styled.hr`
+background-color: #eee;
+border: none;
+height: 1px;
+margin: 10px 0px;
+`
 
 const Summary = styled.div`
 flex: 1;
+border: 0.5px solid lightgray;
+border-radius: 10px;
+padding: 20px;
+height: 50vh;
+`
+const SummaryTitle = styled.h1`
+font-weight: 200;
+`
+const SummaryItem = styled.div`
+margin: 30px 0px;
+display: flex;
+justify-content: space-between;
+font-weight: ${props => props.type === "total" && "500"};
+font-size: ${props => props.type === "total" && "24px"};
+`
+const SummaryItemText = styled.span``
+const SummaryItemPrice = styled.span``
+const Button = styled.button`
+width: 100%;
+padding: 10px;
+background-color: black;
+color: white;
+font-weight: 600;
 `
 
 const Cart = () => {
@@ -89,22 +142,77 @@ const Cart = () => {
                 </Top>
                 <Bottom>
                     <Info>
+
                         <Product>
                             <ProductDetail>
                                 <Image src="https://images.unsplash.com/photo-1560343090-f0409e92791a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80" />
                                 <Details>
                                     <ProductName> <b>Product:</b> STRONG LEDDER SHOES</ProductName>
                                     <ProductId> <b>ID:</b> 94323432234</ProductId>
-                                    <ProductColor />
+                                    <ProductColor color="#53B0AE" />
                                     <ProductSize> <b>Size:</b> 37.5</ProductSize>
                                 </Details>
                             </ProductDetail>
                             <PriceDetail>
-                                price
+                                <ProductAmountContainer>
+                                    <Add />
+                                    <ProductAmount>
+                                        2
+                                    </ProductAmount>
+                                    <Remove />
+                                </ProductAmountContainer>
+                                <ProductPrice>
+                                    $ 50
+                                </ProductPrice>
+                            </PriceDetail>
+                        </Product>
+
+                        <Hr />
+
+                        <Product>
+                            <ProductDetail>
+                                <Image src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80" />
+                                <Details>
+                                    <ProductName> <b>Product:</b> SUN SHADE GLOW</ProductName>
+                                    <ProductId> <b>ID:</b> 94323432234</ProductId>
+                                    <ProductColor color="black" />
+                                    <ProductSize> <b>Size:</b> 37.5</ProductSize>
+                                </Details>
+                            </ProductDetail>
+                            <PriceDetail>
+                                <ProductAmountContainer>
+                                    <Add />
+                                    <ProductAmount>
+                                        2
+                                    </ProductAmount>
+                                    <Remove />
+                                </ProductAmountContainer>
+                                <ProductPrice>
+                                    $ 30
+                                </ProductPrice>
                             </PriceDetail>
                         </Product>
                     </Info>
-                    <Summary>summary</Summary>
+                    <Summary>
+                        <SummaryTitle>ORDER SUMMARY</SummaryTitle>
+                        <SummaryItem>
+                            <SummaryItemText>Subtotal</SummaryItemText>
+                            <SummaryItemPrice>$ 80</SummaryItemPrice>
+                        </SummaryItem>
+                        <SummaryItem>
+                            <SummaryItemText>Estimated Shipping</SummaryItemText>
+                            <SummaryItemPrice>$ 5.90</SummaryItemPrice>
+                        </SummaryItem>
+                        <SummaryItem>
+                            <SummaryItemText>Shipping Discount</SummaryItemText>
+                            <SummaryItemPrice>$ -5.90</SummaryItemPrice>
+                        </SummaryItem>
+                        <SummaryItem type="total">
+                            <SummaryItemText>Total</SummaryItemText>
+                            <SummaryItemPrice>$ 80</SummaryItemPrice>
+                        </SummaryItem>
+                        <Button>CHECKOUT NOW</Button>
+                    </Summary>
                 </Bottom>
             </Wrapper>
             <Footer />
