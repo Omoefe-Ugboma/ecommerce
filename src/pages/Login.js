@@ -41,9 +41,13 @@ padding: 15px 20px;
 background-color: teal;
 color: white;
 cursor: pointer;
+margin-bottom: 10px;
 `
 const Link = styled.a`
 margin: 5px 0px;
+font-size: 12px;
+text-decoration: underline;
+cursor: pointer;
 `
 
 const Login = () => {
@@ -56,7 +60,7 @@ const Login = () => {
                     <Input placeholder="username" />
                     <Input placeholder="password" />
                     <Button>LOGIN</Button>
-                    <Link>DO NOT YOU REMEMBER THE PASSWORD?</Link>
+                    <Link>YOU DO NOT YOU REMEMBER THE PASSWORD?</Link>
                     <Link>CREATE A NEW ACCOUNT</Link>
                 </Form>
             </Wrapper>
