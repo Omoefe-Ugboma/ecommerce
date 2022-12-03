@@ -6,7 +6,7 @@ height: 100vh;
 background: linear-gradient(
     rgba(255,255,255, 0.5),
     rgba(255,255,255, 0.5)
-), url("https://img.freepik.com/free-psd/online-shopping-store-concept-mobile-phone-with-3d-shopping-cart-shopping-bag-gift-boxes_106244-2050.jpg?w=900&t=st=1670011490~exp=1670012090~hmac=73eedf758ba302637463c38e65925d7ca7d465dea1d2e03ec401b318906633a3") center;
+), url("https://images.unsplash.com/photo-1664574654589-8f6c9b94c02d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80") center;
 /* background-repeat: no-repeat; */
 display: flex;
 align-items: center;
